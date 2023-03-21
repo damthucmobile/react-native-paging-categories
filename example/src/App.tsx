@@ -1,18 +1,34 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-paging-categories';
+import { StyleSheet, View } from 'react-native';
+import PagingListView from "../../src/PagingListView";
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <PagingListView data={[
+        {
+          name: 'test',
+        },
+        {
+          name: 'test',
+        },
+        {
+          name: 'test',
+        },
+        {
+          name: 'test',
+        },
+        {
+          name: 'test',
+        },
+        {
+          name: 'test',
+        },
+        {
+          name: 'test',
+        },
+      ]} numColumns={2}/>
     </View>
   );
 }
